@@ -13,8 +13,10 @@ The programming language used is Julia.
 ## Files
 
 1D_BF.jl : Numerical Approximation in 1D with Fixed Boundries
+
 2D_BF.jl : Numerical Approximation in 2D with Fixed Boundries
 
+3D_BF.jl : Numerical Approximation in 2D with Fixed Boundries
 ## Dependecies
 
 To run this code you will need Julia installed in your pc. You can download it here : https://julialang.org/downloads/
@@ -42,4 +44,6 @@ To run any file use this command in terminal :
 Coded by Marti JIMENEZ : [@Marti2405](https://github.com/Marti2405)
 
 Date : 06/2023
+
+
 
