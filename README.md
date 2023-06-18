@@ -1,5 +1,5 @@
 
-# Numerical Solutions for Poisson's Equation in 1D, 2D, 3D
+# Numerical Solutions for Poisson's Equation in 1D, 2D, 3D using the Finite Difference Method
 
 This repository contains the code to solve numerically and visualise Poisson's Equation in 1D, 2D and 3D.
 
