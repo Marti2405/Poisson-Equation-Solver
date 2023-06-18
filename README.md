@@ -21,7 +21,7 @@ The programming language used is Julia.
 
 To run this code you will need Julia installed in your pc. You can download it here : https://julialang.org/downloads/
 
-This code uses 3 Julia packages (SparseArrays, LinearAlgebra and PyPlot). 
+This code uses 3 Julia packages : SparseArrays, LinearAlgebra and PyPlot. 
 
 To install this packages run this commands in the Julia terminal :
 
