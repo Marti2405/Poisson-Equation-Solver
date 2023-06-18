@@ -1,4 +1,6 @@
 # Solving the PDE  uxx = f(x) in 1 Dimension, Fixed Boundary Condition
+# You can modify the known function to test other functions
+# and N->the number of points to get more or less accuracy
 
 using SparseArrays, LinearAlgebra, PyPlot
 
@@ -6,12 +8,12 @@ using SparseArrays, LinearAlgebra, PyPlot
 
 #knonw function f
 function f(x) 
-    return x^2+100
+    return x^2+100 #<---------------------------------------------------------------
 end
 
 
 #parameters
-N = 20
+N = 20 #<---------------------------------------------------------------
 h = 1/N
 x = 0:h:1
 

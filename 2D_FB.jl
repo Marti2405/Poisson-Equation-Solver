@@ -1,4 +1,6 @@
 #Solving the PDE  uxx = f(x,y) in 2 Dimensions, Fixed Boundary Conditions
+# You can modify the known function to test other functions
+# and N->the number of points to get more or less accuracy
 
 using SparseArrays, LinearAlgebra, PyPlot
 
@@ -6,12 +8,12 @@ using SparseArrays, LinearAlgebra, PyPlot
 
 #known function
 function f(x,y)
-    return 0
+    return 10*(x^2+y^2) #<---------------------------------------------------------------
 end
 
 
 # Parameters 
-N = 100
+N = 100 #<---------------------------------------------------------------
 h = 1/N
 x = 0:h:1
 y = 0:h:1
