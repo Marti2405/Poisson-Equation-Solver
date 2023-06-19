@@ -46,7 +46,7 @@ To run any file use this command in terminal :
 ```
 
 ## Author
-Coded by Marti JIMENEZ : [@Marti2405](https://github.com/Marti2405)
+Marti JIMENEZ : [@Marti2405](https://github.com/Marti2405)
 
 Date : 06/2023
 
