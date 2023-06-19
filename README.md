@@ -1,7 +1,7 @@
 
 # Numerical Solutions for Poisson's Equation in 1D, 2D, 3D using the Finite Difference Method
 
-This repository contains the code to solve numerically and visualise Poisson's Equation in 1D, 2D and 3D.
+This repository contains the code to solve numerically and visualise Poisson's Equation in 1D, 2D and 3D with Dirichlet and Neumann Boundary Conditions.
 
 The solving method used is the Finite Difference method. https://en.wikipedia.org/wiki/Finite_difference_method
 
@@ -12,11 +12,16 @@ The programming language used is Julia.
 
 ## Files
 
-1D_BF.jl : Numerical Approximation in 1D with Fixed Boundries
+1D_BF.jl : Numerical Approximation in 1D with Fixed Boundary Condition
 
-2D_BF.jl : Numerical Approximation in 2D with Fixed Boundries
+1D_NBC_1O.jl : Numerical Approximation in 1D with Neumann Boundary Condition, 1st Order
 
-3D_BF.jl : Numerical Approximation in 2D with Fixed Boundries
+2D_BF.jl : Numerical Approximation in 2D with Fixed Boundary Condition
+
+2D_NBC_1O.jl : Numerical Approximation in 2D with Neumann Boundary Condition, 1st Order
+
+3D_BF.jl : Numerical Approximation in 3D with Fixed Boundary Condition
+
 ## Dependecies
 
 To run this code you will need Julia installed in your pc. You can download it here : https://julialang.org/downloads/
