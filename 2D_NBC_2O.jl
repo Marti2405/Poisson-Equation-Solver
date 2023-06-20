@@ -1,7 +1,8 @@
-#Solving the PDE  uxx = f(x,y) in 2 Dimensions, Fixed Boundary Conditions
+#Solving the PDE  uxx = f(x,y) in 2 Dimensions, 2nd Order
+# Neumann Boundary condition -> x=0, du/dx=0
 # You can modify the known function to test other functions (1)
 # and N->the number of points to get more or less accuracy (2)
-# You can also set the fixed boundaries (3.1)(3.2)
+# You can also set the boundaries (3.1)(3.2)
 
 using SparseArrays, LinearAlgebra, PyPlot
 
@@ -9,18 +10,17 @@ using SparseArrays, LinearAlgebra, PyPlot
 
 #known function
 function f(x,y)
-    return 10*(x^2+y^2) #<--------------------------------------------------------------- (1)
+    return 1 #<--------------------------------------------------------------- (1)
 end
 
 
 # Parameters 
 N = 500 #<--------------------------------------------------------------- (2)
-h = 1/N
+h = 1/N # uniform mesh size
 x = 0:h:1
 y = 0:h:1
+X,Y = repeat(x',N+1,1),repeat(y,1,N+1)
 
-
-# X,Y = repeat(x',N+1,1),repeat(y,1,N+1) # Meshgrid 
 # # Show Known Points and Unknown Points
 # fig1 = figure()
 # plot(x[1], y[1], "ro", label="unknown")
@@ -48,20 +48,11 @@ u = zeros(N+1,N+1)
 # u(0,y)=2sin(2πy),     0≤y≤1, left
 # u(1,y)=2sin(2πy),     0≤y≤1, right
 for i in 1:N #<--------------------------------------------------------------- (3.1)
-    u[i,1]=sin(2*pi*x[i]) #Left
-    u[i,N+1]=sin(2*pi*x[i]) #Right
-    u[1,i]=2*sin(2*pi*y[i]) #Top
-    u[N+1,i]=2*sin(2*pi*y[i]) #Bottom
+    u[i,1]=0 #Left
+    u[i,N+1]=0 #Right
+    u[1,i]=0 #Top
+    u[N+1,i]=0 #Bottom
 end
-
-# Show boundaries
-fig2 = figure()
-cm = get_cmap(:plasma)
-plot_wireframe(x,y,u,cmap=cm)
-xlabel("x")
-ylabel("y")
-zlabel("z")
-title("Boundary Values", fontsize=24, y=1.08)
 
 
 
@@ -70,20 +61,30 @@ title("Boundary Values", fontsize=24, y=1.08)
 N2 = (N-1)^2 # Nb of unknown points
 #supper diagonal
 spd = fill(1/h^2,(N2)-N+1)
+spd_add = fill(2/h^2,N-1) # Neumann BC
+spd = vcat(spd_add,spd)
+
 #sub diagonal
 sbd = fill(1/h^2,(N2)-N+1)
+sbd_add = fill(1/h^2,N-1) # Neumann BC
+sbd = vcat(sbd_add,sbd)
 
 #upper diagonal
 ud = fill(1/h^2,N2-1)
 for i in N-1:N-1:N2-1
-    ud[i]=0 # to take in count boundary condition
+    ud[i]=0; # to take in count boundary condition
 end
+ud_add = fill(1/h^2,N-1) # Neumann BC
+ud_add[N-1]=0
+ud = vcat(ud_add,ud)
 #lower diagonal
 ld = ud
 #diagonal
 d = fill(-4/h^2,N2)
-
+d_add = fill(-4/h^2,N-1) # Neumann BC
+d = vcat(d_add,d)
 A = spdiagm(-(N-1)=>sbd,-1=>ld,0=>d,1=>ud,N-1=>spd)
+
 
 
 # # Show Matrix
@@ -91,6 +92,8 @@ A = spdiagm(-(N-1)=>sbd,-1=>ld,0=>d,1=>ud,N-1=>spd)
 # imshow(A)
 # colorbar(label="Matrix elements values")
 # title("Matrix A",fontsize=24)
+# show()
+
 
 # Right side, Know Function(kf) - Boundaries(bound)
 kf = zeros((N-1)^2)
@@ -114,20 +117,26 @@ zlabel("z")
 bound = zeros((N-1)^2)
 
 for i in 1:N-1 #<--------------------------------------------------------------- (3.2)
-    bound[i] += sin(2*pi*x[i+1])/h^2 #bottom
-    bound[i+(N-1)*(N-2)] += sin(2*pi*x[i+1])/h^2 #top
+    bound[i] += 0 #bottom
+    bound[i+(N-1)*(N-2)] += 0 #top
 
-    bound[1+(i-1)*(N-1)] +=  2*sin(2*pi*y[i+1])/h^2 #left
-    bound[(N-1)*i] += 2*sin(2*pi*y[i+1])/h^2 #right
+    bound[1+(i-1)*(N-1)] +=  0 #left 
+    bound[(N-1)*i] += 0 #right
 end
+bc_bound = 0 #<-- This value represents the Neumann BC x=0, du/dx = value
+bc_bound = fill(bc_bound,N-1)
 
+bound = vcat(bc_bound,bound) # adding on top of the boudary array
+
+kf = vcat(fill(0,N-1),kf) # adapting dimension
 # Right side
 B = kf-bound
 
 #Solution
-u_solution = A\B 
+u_solution = -A\B 
+
 #adding the solution to the boundaries
-u[2:N,2:N] = reshape(u_solution,N-1,N-1)
+u[2:N,1:N] = reshape(u_solution,N-1,N)
 
 
 #Show Solution
@@ -143,6 +152,5 @@ title("Numerical Approximation of Poisson's Equation",fontsize=24)
 
 #display all graphs
 show()
-
 
 
