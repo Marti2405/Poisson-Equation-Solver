@@ -22,6 +22,8 @@ The programming language used is Julia.
 
 3D_BF.jl : Numerical Approximation in 3D with Fixed Boundary Condition
 
+MorePDEs : Some other Numerical Approximation of PDEs (Heat equation, Wave equation)
+
 ## Dependecies
 
 To run this code you will need Julia installed in your pc. You can download it here : https://julialang.org/downloads/
