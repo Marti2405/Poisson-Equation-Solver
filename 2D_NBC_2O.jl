@@ -8,7 +8,6 @@
 using SparseArrays, LinearAlgebra, PyPlot
 
 
-
 #known function
 function f(x,y)
     return 1 #<--------------------------------------------------------------- (1)
@@ -122,7 +121,6 @@ xlabel("x")
 ylabel("y")
 zlabel("z")
 title("Numerical Approximation of Poisson's Equation",fontsize=24)
-
 
 
 #display all graphs

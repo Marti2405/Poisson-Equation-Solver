@@ -6,7 +6,6 @@
 using SparseArrays, LinearAlgebra, PyPlot
 
 
-
 #knonw function f
 function f(x) 
     return x^2+100 #<--------------------------------------------------------------- (1)
@@ -76,7 +75,6 @@ bound[N-1]=uN/h^2
 
 # B Matrix, Au=b
 B = kf-bound
-
 
 
 # Solution

@@ -6,7 +6,6 @@
 using SparseArrays, LinearAlgebra, PyPlot
 
 
-
 #known function
 function f(x,y)
     return 10*(x^2+y^2) #<--------------------------------------------------------------- (1)
@@ -18,25 +17,6 @@ N = 500 #<--------------------------------------------------------------- (2)
 h = 1/N
 x = 0:h:1
 y = 0:h:1
-
-
-# X,Y = repeat(x',N+1,1),repeat(y,1,N+1) # Meshgrid 
-# # Show Known Points and Unknown Points
-# fig1 = figure()
-# plot(x[1], y[1], "ro", label="unknown")
-# plot(X, Y, "ro")
-# plot(ones(N+1), y, "bo", label="Boundary Condition")
-# plot(zeros(N+1), y, "bo")
-# plot(x, zeros(N+1), "bo")
-# plot(x, ones(N+1), "bo")
-# xlim(-0.1, 1.1)
-# ylim(-0.1, 1.1)
-# xlabel("x")
-# ylabel("y")
-# legend(loc="center left", bbox_to_anchor=(1, 0.5))
-# title("Grid \$\\Omega_h\$, h = $h", fontsize=24)
-
-
 
 
 # Solution array

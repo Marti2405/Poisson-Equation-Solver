@@ -12,17 +12,17 @@ The programming language used is Julia.
 
 ## Files
 
-1D_BF.jl : Numerical Approximation in 1D with Fixed Boundary Condition
+1D_BF.jl : Numerical Solution in 1D with Fixed Boundary Condition
 
-1D_NBC_2O.jl : Numerical Approximation in 1D with Neumann Boundary Condition, 2nd Order
+1D_NBC_2O.jl : Numerical Solution in 1D with Neumann Boundary Condition, 2nd Order
 
-2D_BF.jl : Numerical Approximation in 2D with Fixed Boundary Condition
+2D_BF.jl : Numerical Solution in 2D with Fixed Boundary Condition
 
-2D_NBC_2O.jl : Numerical Approximation in 2D with Neumann Boundary Condition, 2nd Order
+2D_NBC_2O.jl : Numerical Solution in 2D with Neumann Boundary Condition, 2nd Order
 
-3D_BF.jl : Numerical Approximation in 3D with Fixed Boundary Condition
+3D_BF.jl : Numerical Solution in 3D with Fixed Boundary Condition
 
-MorePDEs : Some other Numerical Approximation of PDEs (Heat equation, Wave equation)
+MorePDEs : Some other Numerical Solution of PDEs (Heat equation, Wave equation)
 
 ## Dependecies
 
