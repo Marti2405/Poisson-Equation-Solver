@@ -79,5 +79,5 @@ xlabel("t")
 ylabel("x")
 
 
-
+#Display all
 show()

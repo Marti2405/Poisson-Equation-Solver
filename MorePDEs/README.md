@@ -16,6 +16,8 @@ The programming language used is Julia.
 
 1D_Heat_NBC.jl : Numerical Approximation of the Heat equation in 1D with Neumann Boundary Condition
 
+2D_Heat_FB.jl : Numerical Approximation of the Heat equation in 2D with Fixed Boundary Condition
+
 1D_Wave_FB.jl : Numerical Approximation of Wave equation in 1D
 
 
@@ -40,6 +42,8 @@ To run any file use this command in terminal :
 ```Cmd
   julia /path/to/file.jl
 ```
+
+All the Numerical Solution animations will be saved in mp4 format to the directory containinf the julia files.
 
 ## Author
 Marti JIMENEZ : [@Marti2405](https://github.com/Marti2405)

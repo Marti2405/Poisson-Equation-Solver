@@ -3,7 +3,6 @@
 # Modify N->the mesh size, Diffusion Constant D, Nb of frames for the video, fps, time step dt (2)
 # Modify the fixed Boundaries (3.1)(3.2)
 
-
 using SparseArrays, Plots
 
 
@@ -11,7 +10,6 @@ using SparseArrays, Plots
 function f(x,y)
     return x^2+y^2 #<--------------------------------------------------------------- (1)
 end
-
 
 
 
@@ -73,9 +71,6 @@ d = fill(1-4*const_diff,N2)
 A = spdiagm(-(N-1)=>sbd,-1=>ld,0=>d,1=>ud,N-1=>spd)
 
 
-println(size(u))
-println(size(A))
-
 # Boundary
 bound = zeros((N-1)^2)
 
@@ -97,6 +92,7 @@ anim = @animate for i in 1:frames
     
 end
 
+#save animation
 gif(anim,"2D_Heat_FB_Anim.mp4",fps=frames_per_second)
 
 

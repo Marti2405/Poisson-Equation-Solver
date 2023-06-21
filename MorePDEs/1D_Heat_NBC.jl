@@ -13,7 +13,6 @@ end
 
 
 
-
 # Parameters  #<--------------------------------------------------------------- (2)
 D = 0.023 #Diffusion Constant
 N = 50 #Number of points
@@ -67,6 +66,7 @@ anim = @animate for i in 1:frames
     u = A*u - bound #update array of current points
 end
 
+#save animation
 gif(anim,"1D_Heat_NBC_Anim.mp4",fps=frames_per_second)
 
 
