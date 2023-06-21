@@ -87,7 +87,7 @@ u[2:N] = u_solution #adding the approximated points to the full solution array
 # Show solution
 fig3 = figure()
 plot(x,u,"bo-")
-title("Numerical Approximation of the Poisson Equation",fontsize=24)
+title("Numerical Approximation of Poisson's Equation",fontsize=24)
 xlabel("x")
 ylabel("y")
 

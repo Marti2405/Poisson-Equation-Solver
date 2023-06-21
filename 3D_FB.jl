@@ -1,4 +1,4 @@
-#Solving the PDE  uxx = f(x,y) in 3 Dimensions, 2nd Order
+#Solving the PDE  uxx = f(x,y) in 3 Dimensions
 # Fixed Boundary Condition
 # You can modify the known function to test other functions (1)
 # and N->the number of points to get more or less accuracy (2)
@@ -24,7 +24,7 @@ y = 0:h:1
 z = 0:h:1
 
 # Show Known function
-
+println("Displaying Known function...")
 X, Y, Z = PlotlyJS.mgrid(x, y, z)
 
 values = f.(X,Y,Z)
@@ -40,7 +40,6 @@ p = PlotlyJS.plot(PlotlyJS.volume(
     surface_count=17, # needs to be a large number for good volume rendering
 ))
 display(p)
-display(values)
 
 
 # Solution array
@@ -118,13 +117,6 @@ d = fill(-4/h^2,N2)
 
 A = spdiagm(-(N-1)^2=>sbld,-(N-1)=>sbd,-1=>ld,0=>d,1=>ud,N-1=>spd,(N-1)^2=>spud)
 
-# Show Matrix
-fig3 = figure()
-imshow(A)
-colorbar(label="Matrix elements values")
-title("Matrix A",fontsize=24)
-
-
 
 # Right side, Know Function(kf) - Boundaries(bound)
 kf = zeros((N-1)^3)
@@ -165,15 +157,9 @@ for i in 1:N-1, j in 1:N-1, p in 1:N-1
     u[(N)-j%N+1,(i)%(N)+1,p%(N)+1] = u_solution[count]
 end
 
-display(u)
-
-
-
 
 # Show solution
-
-
-
+println("Displaying Numerical Solution...")
 p = PlotlyJS.plot(PlotlyJS.volume(
     x=X[:],
     y=Y[:],

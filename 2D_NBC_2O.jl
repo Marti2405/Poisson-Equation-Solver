@@ -1,5 +1,6 @@
 #Solving the PDE  uxx = f(x,y) in 2 Dimensions, 2nd Order
 # Neumann Boundary condition -> x=0, du/dx=0
+# Dirichlet Boundary condition = 0 on all the other sides
 # You can modify the known function to test other functions (1)
 # and N->the number of points to get more or less accuracy (2)
 # You can also set the boundaries (3.1)(3.2)
@@ -20,23 +21,6 @@ h = 1/N # uniform mesh size
 x = 0:h:1
 y = 0:h:1
 X,Y = repeat(x',N+1,1),repeat(y,1,N+1)
-
-# # Show Known Points and Unknown Points
-# fig1 = figure()
-# plot(x[1], y[1], "ro", label="unknown")
-# plot(X, Y, "ro")
-# plot(ones(N+1), y, "bo", label="Boundary Condition")
-# plot(zeros(N+1), y, "bo")
-# plot(x, zeros(N+1), "bo")
-# plot(x, ones(N+1), "bo")
-# xlim(-0.1, 1.1)
-# ylim(-0.1, 1.1)
-# xlabel("x")
-# ylabel("y")
-# legend(loc="center left", bbox_to_anchor=(1, 0.5))
-# title("Grid \$\\Omega_h\$, h = $h", fontsize=24)
-
-
 
 
 # Solution array
@@ -84,15 +68,6 @@ d = fill(-4/h^2,N2)
 d_add = fill(-4/h^2,N-1) # Neumann BC
 d = vcat(d_add,d)
 A = spdiagm(-(N-1)=>sbd,-1=>ld,0=>d,1=>ud,N-1=>spd)
-
-
-
-# # Show Matrix
-# fig3 = figure()
-# imshow(A)
-# colorbar(label="Matrix elements values")
-# title("Matrix A",fontsize=24)
-# show()
 
 
 # Right side, Know Function(kf) - Boundaries(bound)
