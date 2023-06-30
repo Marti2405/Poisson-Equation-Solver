@@ -49,13 +49,120 @@ To run any file use this command in terminal :
 ```
 ## Some Results
 
+### 2D Poisson's Equation (Dirichlet Boundary Condition)
+```math
+\frac{\partial^2 u}{\partial x^2}+ \frac{\partial^2 u}{\partial y^2} = f(x,y)
+```
+Boundary Condition :
+
+![Boundary Condition](./SomeResultsImg/2D_FB_Boundaries.png) 
+
+Function that we are solving for :
+```math
+f(x,y) = 10(x^2+y^2)
+```
+<br>
+
+![Known Function](./SomeResultsImg/2D_FB_Known_F.png)
+
+Numerical Solution :
+
+![Numerical Solution](./SomeResultsImg/2D_FB_Sol.png)
+
+### 2D Poisson's Equation (Neumann Boundary Condition)
+```math
+\frac{\partial^2 u}{\partial x^2}+ \frac{\partial^2 u}{\partial y^2} = f(x,y)
+```
+
+Boundary Condition :
+
+```math
+\frac{\partial u(0,y)}{\partial y} = 0
+```
+
+Function that we are solving for :
+```math
+f(x,y) = 1
+```
+<br>
+
+![Known Function](./SomeResultsImg/2D_NBC_Known_F.png)
+
+Numerical Solution :
+
+![Numerical Solution](./SomeResultsImg/2D_NBC_Sol.png)
+
+### 3D Poisson's Equation (Dirichlet Boundary Condition)
+```math
+\nabla^2u=f(x,y,z)
+```
+
+Boundary Condition :
+```math
+All\ boundaries = 0
+```
+
+
+Function that we are solving for :
+
+```math
+f(x,y,z) = x^2+0.4
+```
+<br>
+
+![Known Function](./SomeResultsImg/3D_FB_Known_F.png)
+
+Numerical Solution :
+
+![Numerical Solution](./SomeResultsImg/3D_FB_Sol.png)
+
 ### 1D Wave Equation
+```math
+\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2u}{\partial x^2}  
+```
+<br>
+
 ![Analytical Solution](./SomeResultsImg/1D_Wave_Asol.png)
 ![Numerical Solution](./SomeResultsImg/1D_Wave_Nsol.png)
 ![Solution Error](./SomeResultsImg/1D_Wave_Error.png)
 
+### 1D Heat Equation
 
-## Author
+```math
+\frac{\partial u}{\partial t} = D^2 \frac{\partial^2u}{\partial x^2}  
+```
+<br>
+
+Fixed Boundary Condition :
+
+![1D Heat Equation Fixed Boundary Condition](./SomeResultsImg/1D_Heat_FB_Anim.gif) 
+
+Neumann Boundary Condition :
+
+![1D Heat Equation Neumann Boundary Condition](./SomeResultsImg/1D_Heat_NBC_Anim.gif)
+
+### 2D Heat Equation
+
+```math
+\frac{\partial u}{\partial t} = D^2 .\nabla^2u 
+```
+<br>
+
+Fixed Boundary Condition :
+
+![Fixed Boundary Condition](./SomeResultsImg/2D_FB_Boundaries.png)
+
+Numerical Solution :
+
+![Numerical Solution](./SomeResultsImg/2D_Heat_FB_Anim.gif)
+
+
+
+<br>
+
+<br>
+
+# Author
 Marti JIMENEZ : [@Marti2405](https://github.com/Marti2405)
 
 Date : 06/2023
