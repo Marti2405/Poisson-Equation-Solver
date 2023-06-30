@@ -47,6 +47,13 @@ To run any file use this command in terminal :
 ```Cmd
   julia /path/to/file.jl
 ```
+## Some Results
+
+### 1D Wave Equation
+![Analytical Solution](./SomeResultsImg/1D_Wave_Asol.png)
+![Numerical Solution](./SomeResultsImg/1D_Wave_Nsol.png)
+![Solution Error](./SomeResultsImg/1D_Wave_Error.png)
+
 
 ## Author
 Marti JIMENEZ : [@Marti2405](https://github.com/Marti2405)
