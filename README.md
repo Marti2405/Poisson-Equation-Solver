@@ -195,7 +195,9 @@ Contributions are welcome! If you find any bugs, have suggestions for improvemen
 
 ## License
 
-This repository is open-source. Feel free to use, and modify the code. Happy coding!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
 
 ## Author
 
