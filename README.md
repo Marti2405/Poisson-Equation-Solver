@@ -10,8 +10,8 @@ This repository contains the code to numerically solve and visualize Poisson's E
 - [Dependencies](#dependencies)
 - [Usage](#usage)
 - [Results](#results)
-- [License](#license)
 - [Contributing](#contributing)
+- [License](#license)
 - [Author](#author)
 
 ## Introduction
