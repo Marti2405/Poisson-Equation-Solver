@@ -135,6 +135,8 @@ Numerical Solution:
 
 ![Numerical Solution](./SomeResultsImg/3D_FB_Sol.png)
 
+
+# Other PDEs
 ### 1D Wave Equation
 
 The 1D Wave Equation is given by:
